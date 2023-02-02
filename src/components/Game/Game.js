@@ -17,18 +17,11 @@ function Game() {
   function handleSubmitGuesses(tentativeGuess) {
     // set current guesses and new tentative guess
     setGuesses([...guesses, tentativeGuess]);
-
-    // OPTION: If you want to generate a unique Id for tentative guess
-    // const nextGuess = {
-    //   value: tentativeGuess,
-    //   id: `${tentativeGuess}-${Math.random()}`,
-    // };
-    // setGuesses([...guesses, nextGuess]);
   }
 
   return (
     <>
-      <GuessResult guesses={guesses} />
+      <GuessResult guesses={guesses} answer={answer} />
       <WordInput handleSubmitGuesses={handleSubmitGuesses} />
     </>
   );
